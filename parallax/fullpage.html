@@ -15,10 +15,11 @@
       list-style: none;
       overflow: hidden;
       height: 600px;
+      position: relative;
     }
 
     .parallax-bg {
-      height: 700px;
+      height: 800px;
     }
 
     .rails { 
@@ -42,6 +43,24 @@
       background-size: cover;
     }
 
+    ul li .subcontent {
+      position: absolute;
+      top: 0;
+      left: 100px;
+      color: #ff0000;
+      font-family: helvetica;
+    }
+
+    h1 {
+      font-size: 72px;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 48px;
+      margin-top: 0;
+    }
+
   </style>
 </head>
 <body>
@@ -49,6 +68,10 @@
   <ul class="parallax">
     <li>
       <div class="parallax-bg rails"></div>
+      <div class="subcontent">
+        <h1>Sample Text</h1>
+        <h2>Hello my friend</h2>
+      </div>
     </li>
     <li>
       <div class="parallax-bg landscape"></div>
@@ -58,6 +81,10 @@
     </li>
     <li>
       <div class="parallax-bg hawk"></div>
+      <div class="subcontent">
+        <h1>Sample Text</h1>
+        <h2>Hello my friend</h2>
+      </div>
     </li>
   </ul>
   
@@ -69,36 +96,31 @@
       var $container = $(".parallax");
       var $divs = $container.find("div.parallax-bg");
 
-      var i, len, div, li, offset, scroll;
+      var scrolledElement = document.body;
+      var liHeight = $divs.eq(0).closest("li").height();
+
+      var diffHeight = $divs.eq(0).height() - liHeight;
+
+      var i, len, div, li, offset, scroll, top;
 
       var render = function() { 
 
-        top = 
+        top = scrolledElement.scrollTop;
         
         // loop through divs
         for (var i = 0, len = $divs.length; i < len; i += 1) {
+          // get on div
+          div = $divs[i];
 
+          // calculate the offsetTop of the div
+          offset = $(div).offset().top;
+
+          // calculate the amount to scroll
+          scroll = Math.round(((top - offset) / liHeight) * diffHeight);
+
+          // apply the scroll amount
+          div.style.webkitTransform = "translate3d(0px," + scroll + "px, 0px)";
         }
-
-        // get on div
-        div = $divs[i];
-
-        // get the parent li
-        li = div.parentNode;
-
-        // calculate the offsetTop of the div
-        offset = $(div).offset().top;
-
-
-        // calculate the amount to scroll
-        scroll = top - offset
-
-
-        // apply the scroll amount
-        
-
-
-
       };
 
       (function loop() {
