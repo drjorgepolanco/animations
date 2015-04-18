@@ -1,0 +1,121 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+  <style>
+
+    body {
+      background-color: #ff0000;
+    }
+
+    .logo {
+      position: absolute;
+    }
+
+    .boxes {
+      margin-left: 400px;
+    }
+
+    .box { 
+      background: -webkit-linear-gradient(#88CE02, #88D800);
+      background:      -o-linear-gradient(#88CE02, #88D800);
+      background:         linear-gradient(#88CE02, #88D800);
+      background-color: ;
+      border-radius: 20px;
+      height: 100px;
+      width: 100px;
+      display: inline-block;
+      margin: 10px;
+      border: 4px solid #fff; 
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="gradient"></div>
+  <div class="demo">
+    <img class="logo" src="images/heroica_black_transp.png" alt="">
+    <div class="boxes">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
+  <script type="text/javascript">
+
+    // TweenMax.to(target, duration, { vars });
+
+    // Slide Left with border
+    // ----------------------
+
+    // TweenMax.to(".logo", 5, {
+    //   left: 600, 
+    //   backgroundColor: "#fff",
+    //   border: "5px solid #000",
+    //   borderRadius: 25,
+    //   padding: 20
+    // });
+
+
+    // Scale and rotate
+    // ----------------
+
+    // TweenMax.to(".logo", 1, {
+    //   x: 600,
+    //   rotation: 360,
+    //   scale: 0.5
+    // });
+
+
+    // Easing
+    // ------
+
+    // TweenMax.to(".logo", 3, {
+    //   x: 400,
+    //   y: 400,
+    //   // ease: Back.easeOut
+    //   // ease: Elastic.easeOut
+    //   // ease: SteppedEase.config(40), y: 30
+    //   ease: SlowMo.ease.config(0.7, 2, false)
+    // });
+
+
+    // From Tween
+    // ==========
+
+    TweenMax.from(".logo", 0.5, {
+      y: 400,
+      opacity: 0,
+      scale: 0,
+      ease: Bounce.easeOut
+    });
+
+    TweenMax.staggerFrom(".box", 0.5, {
+      opacity: 0, 
+      y: 200, 
+      delay: 0.5,
+      rotation: 360,
+      scale: 0.2
+    }, 0.2);
+
+    TweenMax.to(".logo, .box", 0.5, {
+      opacity: 0,
+      delay: 2,
+      onComplete: complete
+    })
+
+    function complete () {
+      alert("hi!");
+    }
+
+
+
+  </script>
+</body>
+</html>
