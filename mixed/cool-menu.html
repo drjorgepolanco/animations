@@ -1,0 +1,268 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<style>
+    
+    body {
+        background-color: #ff0000;
+        padding: 0;
+        margin: 0;
+    }
+
+    li a {
+        font-weight: 200 !important;
+        font-smooth: always !important;
+    }
+
+    nav {
+        height: 50px;
+        width: 100%;
+        background: #2bace2;
+        font-size: 11pt;
+        font-family: 'PT Sans', Arial, sans-serif;
+        font-weight: bold;
+        position: relative;
+    }
+    
+    nav ul {
+        padding: 0;
+        margin: 0 auto;
+        width: 900px;
+        height: 50px;
+    }
+
+    nav li {
+        display: inline;
+        float: left;
+        width: 16.66%;
+    }
+
+    .clearfix:before,
+    .clearfix:after {
+        content: " ";
+        display: table;
+    }
+    
+    .clearfix:after {
+        clear: both;
+    }
+    
+    .clearfix {
+        *zoom: 1;
+    }
+
+
+    nav a {
+        color: #fff;
+        display: inline-block;
+        width: 100px;
+        text-align: center;
+        text-decoration: none;
+        line-height: 50px;
+    }
+
+
+    nav a:hover, nav a:active {
+        color: #3E4A60;
+        transition: 0.4s ease;
+    }
+
+    nav a#mobilemenu {
+        display: none;
+    }
+
+    .login {
+        display: none;
+    }
+
+    @media screen and (max-width: 1280px) {
+        nav { 
+            height: auto;
+        }
+        nav ul {
+            width: 900px;
+            display: block;
+            height: auto;
+            
+        }
+        nav li {
+            position: relative;
+        }
+        nav a {
+            text-align: left;
+            width: 100%;             
+        }
+    }
+
+
+    @media only screen and (max-width: 1024px) {
+        nav {
+            border-bottom: 0;
+        }
+
+        nav ul {
+            display: none;
+            height: 100%;
+            width: 100%;
+        }
+
+        nav li {
+            display: block;
+            float: none;
+            width: 100%;
+            height: 13%;
+        }
+
+        .home {
+            padding-top: 100px;
+        }
+
+        nav li a:last-child {
+            padding: 0;
+        }
+
+        nav a#mobilemenu {
+            display: block;
+            background-color: #0aa8e9;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            text-align: center;
+        }
+
+        nav a {
+            padding: 10px 0 10px 0;
+            text-indent: 40px;
+        }
+
+        nav a#mobilemenu:after {
+            content:"";
+            background: url('nav-icon.png') no-repeat;
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            position: absolute;
+            left: 15px;
+            top: 15px;
+        }
+
+        .login {
+            display: block;
+            background: #3e4a60;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        .login a:hover {
+            color: #0aa8e9;
+        }
+
+        .login-img {
+            float: left;
+        }
+
+        .login-text {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            float: left;
+            padding-left: 100px;
+        }
+
+        .login-text h2 {
+            font-weight: 100;
+            font-smooth: always;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        nav li {
+            display: block;
+            float: none;
+            width: 100%;
+        }
+    }
+</style>
+<body>
+    <nav class="clearfix">
+        <ul class="clearfix">
+            <li class="menu-item home"><a href="#">Home</a></li>
+            <li class="menu-item"><a href="#">About Us</a></li>
+            <li class="menu-item"><a href="#">Services</a></li>
+            <li class="menu-item"><a href="#">Enerprize</a></li>
+            <li class="menu-item"><a href="#">Clients</a></li>
+            <li class="menu-item"><a href="#">Contact</a></li>  
+            <li class="login">
+                <a href="#">
+                    <div class="login-elements">
+                        <div class="login-img">
+                            <img class="img" src="images/login.png" alt="">
+                        </div>
+                        <div class="login-text">
+                            <h2>Enerprize &reg; Login</h2>
+                        </div>
+                    </div>
+                </a>
+            </li>  
+        </ul>
+        <a href="#" id="mobilemenu"><img src="images/energy-logo.png" alt=""></a>
+    </nav>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+
+        $(function() {
+            var mobilemenu  = $('#mobilemenu');
+            var menu        = $('nav ul');
+            var menuHeight  = menu.height();
+            var navIsOpen   = false;
+            var menuItem    = $(".menu-item");
+                
+            var slideIn     = function() {
+                TweenMax.staggerFrom("li a", 0.6, {
+                    textIndent: 0,
+                    opacity: 0,
+                    ease: Power2.easeOut
+                }, 0.2);
+            };
+
+            $(mobilemenu).on('click', function(e) {
+                e.preventDefault();
+                menu.slideToggle(800, function() {
+                    if (navIsOpen === false) {
+                        navIsOpen = true;
+                        console.log("navIsOpen: " + navIsOpen);
+                    }
+                    else {
+                        navIsOpen = false;
+                        console.log("navIsOpen: " + navIsOpen);
+                    }
+                });
+            });
+
+            $(window).resize(function(){
+                var w = $(window).width();
+                if (w > 768 && menu.is(':hidden')) {
+                    menu.removeAttr('style');
+                }
+            });
+
+
+            $(mobilemenu).on("click", function() {
+                console.log("tweeeeen");
+                if (navIsOpen === false) {
+                    slideIn();
+                }
+            });
+        });
+
+    </script>
+    
+</body>
+</html>
