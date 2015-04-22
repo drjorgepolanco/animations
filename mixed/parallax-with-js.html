@@ -1,0 +1,150 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Primary Structure */
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Sections */
+
+    section.module:last-child {
+      margin-bottom: 0;
+    }
+
+    section.module h2 {
+      margin-bottom: 40px;
+      font-family: "Roboto Slab", serif;
+      font-size: 30px;
+    }
+
+    section.module p {
+      margin-bottom: 40px;
+      font-size: 16px;
+      font-weight: 300;
+    }
+
+    section.module p:last-child {
+      margin-bottom: 0;
+    }
+
+    section.module.content {
+      padding: 40px 0;
+    }
+
+    section.module.parallax {
+      padding: 240px 0;
+      background-position: 0 0; 
+    }
+
+    section.module.parallax h1 {
+      color: #1e1e1e;
+      font-size: 48px;
+      line-height: 1;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px white;
+    }
+
+    section.module.parallax-1 {
+      background-image: url(images/rails_1.jpg);
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    section.module.parallax-2 {
+      background-image: url(images/caroline_sada_landscape.jpg);
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    section.module.parallax-3 {
+      background-image: url(images/in-hawk.jpg);
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    @media all and (min-width: 600px) {
+
+      section.module h2 {
+        font-size: 42px;
+      }
+
+      section.module p {
+        font-size: 20px;
+      }
+
+      section.module.parallax {
+        padding: 300px 0;
+      }
+
+      section.module.parallax h1 {
+        font-size: 96px;
+      }
+    }
+
+    @media all and (min-width: 960px) {
+      section.module.parallax h1 {
+        font-size: 160px;
+      }
+    }
+
+
+
+  </style>
+</head>
+<body>
+
+  <section class="module parallax parallax-1">
+    <div class="container">
+      <h1>Motion</h1>
+    </div>
+  </section>
+
+  <section class="module content">
+    <div class="container">
+      <h2>Lorem Ipsum Dolor</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus facilis quod, dolorem nam est a. Repellendus distinctio eveniet culpa, alias consequatur quibusdam quos, nobis perspiciatis cum odio tempore! Rerum, adipisci!</p>
+    </div>
+  </section>
+
+  <section class="module parallax parallax-2">
+    <div class="container">
+      <h1>Shape</h1>
+    </div>
+  </section>
+
+  <section class="module content">
+    <div class="container">
+      <h2>Lorem Ipsum Dolor</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut illum perspiciatis, saepe tempora corrupti, dolorum dignissimos voluptas, reiciendis suscipit tenetur expedita! Laudantium explicabo sit ex illum, quas non totam dolorum.</p>
+    </div>
+  </section>
+
+  <section class="module parallax parallax-3">
+    <div class="container">
+      <h1>Colour</h1>
+    </div>
+  </section>
+
+  <section class="module content">
+    <div class="container">
+      <h2>Lorem Ipsum Dolor</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, optio suscipit possimus asperiores, iure consectetur. In quos libero, corrupti, officiis cumque laborum doloribus, maxime sapiente, minima consectetur voluptatibus necessitatibus vitae!</p>
+    </div>
+  </section>
+  
+</body>
+</html>

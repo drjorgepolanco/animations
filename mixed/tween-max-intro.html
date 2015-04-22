@@ -6,48 +6,80 @@
   <style>
 
     body {
-      background-color: #ff0000;
+      background-color: blue;
     }
 
-    .logo {
+    .container {
       position: absolute;
+      margin: auto;
+      top: 0; 
+      left: 0; 
+      bottom: 0; 
+      right: 0;
+      background-color: #fff;
+      height: 600px;
+      width: 600px;
+      border-radius: 50%;
     }
 
-    .boxes {
-      margin-left: 400px;
+    #logo {
+      position: absolute;
+      margin: auto;
+      top: 0; 
+      left: 0; 
+      bottom: 0; 
+      right: 0;
+      height: auto;
+      width: auto;
+    }
+
+    #boxes {
+      width: 100%;
+      margin: 32px auto;
+
     }
 
     .box { 
-      background: -webkit-linear-gradient(#88CE02, #88D800);
-      background:      -o-linear-gradient(#88CE02, #88D800);
-      background:         linear-gradient(#88CE02, #88D800);
-      background-color: ;
       border-radius: 20px;
       height: 100px;
       width: 100px;
       display: inline-block;
-      margin: 10px;
-      border: 4px solid #fff; 
+      margin: 0 auto;
+      border: 4px solid #fff;
+      background: -webkit-linear-gradient(#88CE02, #88D800);
+      background:      -o-linear-gradient(#88CE02, #88D800);
+      background:         linear-gradient(#88CE02, #88D800); 
+      transform: scale(1.5, 1.5) rotateY(45deg) translate3d(10px, 0px, -200px);
     }
 
   </style>
 </head>
 <body>
-
-  <div class="gradient"></div>
-  <div class="demo">
-    <img class="logo" src="images/heroica_black_transp.png" alt="">
-    <div class="boxes">
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-    </div>
+  <!-- <div id="boxes">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div> -->
+  <div class="container">
+    <img id="logo" src="images/heroica_black_transp.png">
   </div>
+    
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
+  <!-- // <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script> -->
+  <!-- // <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script> -->
+  <!-- // <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script> -->
   <script type="text/javascript">
+
+    var logo = document.getElementById("logo");
+    var boxes = document.getElementById("boxes");
+
+    TweenLite.from(logo, 2, {scale: 3})
+
+
+    TweenLite.set(boxes, {perspective:500});
 
     // TweenMax.to(target, duration, { vars });
 
@@ -89,30 +121,53 @@
     // From Tween
     // ==========
 
-    TweenMax.from(".logo", 0.5, {
-      y: 400,
-      opacity: 0,
-      scale: 0,
-      ease: Bounce.easeOut
-    });
+    // TweenMax.from(".logo", 0.5, {
+    //   y: 400,
+    //   opacity: 0,
+    //   scale: 0,
+    //   ease: Bounce.easeOut
+    // });
 
-    TweenMax.staggerFrom(".box", 0.5, {
-      opacity: 0, 
-      y: 200, 
-      delay: 0.5,
-      rotation: 360,
-      scale: 0.2
-    }, 0.2);
+    // TweenMax.staggerFrom(".box", 0.5, {
+    //   opacity: 0, 
+    //   y: 200, 
+    //   delay: 0.5,
+    //   rotation: 360,
+    //   scale: 0.2
+    // }, 0.2);
 
-    TweenMax.to(".logo, .box", 0.5, {
-      opacity: 0,
-      delay: 2,
-      onComplete: complete
-    })
+    // TweenMax.to(".logo, .box", 0.5, {
+    //   opacity: 0,
+    //   delay: 2,
+    //   onComplete: complete
+    // });
+    // TweenLite.to(logo, 1, {rotation:45, scaleX:0.8, z:-100});
 
-    function complete () {
-      alert("hi!");
-    }
+    //apply a perspective to the PARENT element (the container) to make the perspective apply to all child elements (typically best)
+    
+
+    //or set a default perspective that will be applied to every individual element that you tween in 3D:
+    // CSSPlugin.defaultTransformPerspective = 500;
+
+    //or apply perspective to a single element using "transformPerspective"
+    // TweenLite.set(element, {transformPerspective:500});
+
+    // logo.onmouseover = function() {
+    //   // TweenLite.to(logo, 2, {rotation:-360, scale:1});
+    //   // TweenLite.to(logo, 2, {rotation:360, scale:0.1});
+    // };
+
+    // logo.onmouseout = function() {
+    //   // TweenLite.to(logo, 2, {rotation:-360, scale:1});
+    //   // TweenLite.to(logo, 2, {rotation:"1.25rad", skewX:"-45deg"});
+    // };
+
+
+
+
+    // function complete () {
+    //   alert("animation complete!");
+    // }
 
 
 

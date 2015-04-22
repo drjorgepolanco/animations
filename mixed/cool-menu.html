@@ -2,7 +2,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Cool Menu</title>
 </head>
 
 <style>
@@ -232,7 +232,7 @@
                 }, 0.2);
             };
 
-            $(mobilemenu).on('click', function(e) {
+            mobilemenu.on('click', function(e) {
                 e.preventDefault();
                 menu.slideToggle(800, function() {
                     if (navIsOpen === false) {
@@ -254,7 +254,7 @@
             });
 
 
-            $(mobilemenu).on("click", function() {
+            mobilemenu.on("click", function() {
                 console.log("tweeeeen");
                 if (navIsOpen === false) {
                     slideIn();

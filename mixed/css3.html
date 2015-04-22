@@ -1,0 +1,94 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+  <style>
+
+    body {
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+
+    ul {
+      overflow: hidden;
+    }
+
+    li {
+      float: left;
+      list-style: none;
+      padding:20px;
+      background: #ff0000;
+      border: 2px solid #666;
+      margin: 20px;
+    }
+
+    h1[rel="title"] {
+      color: red;
+    }
+
+    a[title*='Image'] {
+      color: red;
+    }
+    a[href^="http"] {
+      color: green;
+    }
+
+    p:nth-child(2n) { font-weight: bolder; color: green; }
+    p:nth-of-type(2n) { font-weight: bolder; color: blue; }
+
+    @media(min-width: 640px) {
+      h1 {
+        background: url("images/rails_1.jpg") no-repeat center center;
+        color: white;
+        background-size: 100%;
+        padding-top: 50%;
+
+      }
+    }
+
+    @media(orientation: portrait) {
+      li {
+        float: none;
+      }
+    }
+
+    
+
+  </style>
+<body>
+  <nav>
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>Services</li>
+      <li>Work</li>
+      <li>Pricing</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+  <h1 rel="title">The Page Title</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, aspernatur 
+    esse fugit mollitia veritatis atque laborum, laudantium dignissimos natus velit 
+    facere dolorum, suscipit illum placeat sunt blanditiis ipsa perferendis eveniet.
+    <a href="#" title="Free Image Library">Hola</a>
+    <a href="http://www.drjorgepolanco.com/">Ahi si hay</a>
+  </p>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, aspernatur 
+    esse fugit mollitia veritatis atque laborum, laudantium dignissimos natus velit 
+    facere dolorum, suscipit illum placeat sunt blanditiis ipsa perferendis eveniet.
+  </p>
+
+  <div>
+    <h2>The Picture of Dorian Gray</h2>
+    <p>The artist is the creator...</p>
+    <p>To reveal art and conceal the artist...</p>
+    <p>The critic is he who can translate...</p>
+  </div>
+
+  
+</body>
+</html>
