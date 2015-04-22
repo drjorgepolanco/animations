@@ -100,9 +100,6 @@
         font-size: 160px;
       }
     }
-
-
-
   </style>
 </head>
 <body>
@@ -145,6 +142,21 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, optio suscipit possimus asperiores, iure consectetur. In quos libero, corrupti, officiis cumque laborum doloribus, maxime sapiente, minima consectetur voluptatibus necessitatibus vitae!</p>
     </div>
   </section>
+
+  <script>
+    (function() {
+      var parallax = document.querySelectorAll(".parallax"), 
+          speed    = 0.5;
+
+      window.onscroll = function() {
+        [].slice.call(parallax).forEach(function(el, i) {
+          var windowYOffset   = window.pageYOffset,
+              elBackgroundPos = "50%" + (windowYOffset * speed) + "px";
+          el.style.backgroundPosition = elBackgroundPos;
+        });
+      }
+    })();
+  </script>
   
 </body>
 </html>
