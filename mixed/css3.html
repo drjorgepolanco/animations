@@ -39,6 +39,49 @@
     p:nth-child(2n) { font-weight: bolder; color: green; }
     p:nth-of-type(2n) { font-weight: bolder; color: blue; }
 
+
+
+    .columns {
+      column-count: 2;
+    } 
+
+
+    .small-push-0 {
+    position: relative;
+    left: 0%;
+    right: auto; }
+
+  .small-pull-0 {
+    position: relative;
+    right: 0%;
+    left: auto; }
+
+  .small-push-1 {
+    position: relative;
+    left: 8.33333%;
+    right: auto; }
+
+  .small-pull-1 {
+    position: relative;
+    right: 8.33333%;
+    left: auto; }
+
+  .small-push-2 {
+    position: relative;
+    left: 16.66667%;
+    right: auto; }
+
+  .small-pull-2 {
+    position: relative;
+    right: 16.66667%;
+    left: auto; }
+
+    .box {
+      height: 400px;
+      width: 400px;
+      background-color: red;
+    }
+
     @media(min-width: 640px) {
       h1 {
         background: url("images/rails_1.jpg") no-repeat center center;
@@ -69,6 +112,8 @@
       <li>Contact</li>
     </ul>
   </nav>
+  <div class="box small-pull-2"></div>
+
   <h1 rel="title">The Page Title</h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, aspernatur 
     esse fugit mollitia veritatis atque laborum, laudantium dignissimos natus velit 
@@ -77,7 +122,8 @@
     <a href="http://www.drjorgepolanco.com/">Ahi si hay</a>
   </p>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, aspernatur 
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, aspernatur 
     esse fugit mollitia veritatis atque laborum, laudantium dignissimos natus velit 
     facere dolorum, suscipit illum placeat sunt blanditiis ipsa perferendis eveniet.
   </p>
@@ -88,6 +134,12 @@
     <p>To reveal art and conceal the artist...</p>
     <p>The critic is he who can translate...</p>
   </div>
+
+  <section class="columns">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint rem, optio vero laudantium cupiditate adipisci quidem, vitae voluptatem tempore aperiam culpa tenetur, illum quam reiciendis unde laboriosam, laborum alias nemo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere explicabo, porro eaque perspiciatis ipsam fugit at minus voluptatum reprehenderit enim libero aspernatur aliquam blanditiis impedit eligendi qui debitis pariatur nulla. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi aut quia fugit doloremque, vitae, dolore, dolores fuga optio minus facilis expedita. Dicta perferendis fugit quidem, ipsa, iste ea repellendus hic.
+    </p>
+  </section>
 
   
 </body>

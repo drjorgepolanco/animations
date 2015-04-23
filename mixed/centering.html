@@ -1,0 +1,86 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Centering Elements</title>
+
+  <style>
+
+    body {
+
+    }
+
+    /* WHEN WE HAVE IMAGE SIZE */
+    /* ----------------------- */
+
+    /*img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -220px;
+      margin-left: -220px;
+    }*/
+
+    
+    /* TABLE */
+    /* ----- */
+
+    /*.container {
+      display: table;
+      width: 100%;
+      height: 100%;
+    }
+
+    .element {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+    }*/
+
+    .block {
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .block:before {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      margin-right: -0.01em;
+    }
+
+    .centered {
+      display: inline-block;
+      vertical-align: middle;
+      width: auto;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <!-- WHEN WE HAVE IMAGE SIZE -->
+  <!-- <div class="img">
+    <img src="images/heroica_black_transp.png" alt="">
+  </div> -->
+
+  
+  <!-- TABLE -->
+  <!-- <div class="container">
+    <div class="element">
+      <img src="images/heroica_black_transp.png" alt="">
+    </div>
+  </div> -->
+
+
+  <!-- FLUID -->
+  <div class="block">
+    <div class="centered">
+      <img src="images/heroica_black_transp.png" alt="">
+    </div>
+  </div>
+
+  
+  
+</body>
+</html>
